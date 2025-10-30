@@ -28,7 +28,10 @@ func NewRouter(scanner *service.Scanner) http.Handler {
 		// Stop here if a scan is already running
 		if service.GetJobState(req.Owner, req.Repo) == "running" {
 			w.WriteHeader(http.StatusConflict)
-			fmt.Fprintf(w, "scan already running")
+			_, err := fmt.Fprintf(w, "scan already running")
+			if err != nil {
+				return
+			}
 			return
 		}
 
@@ -44,7 +47,10 @@ func NewRouter(scanner *service.Scanner) http.Handler {
 		}()
 
 		w.WriteHeader(http.StatusAccepted)
-		fmt.Fprintf(w, "scan started")
+		_, err := fmt.Fprintf(w, "scan started")
+		if err != nil {
+			return
+		}
 	})
 
 	// Get the status of the current scan
@@ -56,7 +62,10 @@ func NewRouter(scanner *service.Scanner) http.Handler {
 			return
 		}
 		state := service.GetJobState(owner, repo)
-		fmt.Fprintf(w, "%s", state)
+		_, err := fmt.Fprintf(w, "%s", state)
+		if err != nil {
+			return
+		}
 	})
 
 	// List findings
@@ -72,7 +81,10 @@ func NewRouter(scanner *service.Scanner) http.Handler {
 		findings := scanner.ListFindings(owner, repo)
 
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(findings)
+		err := json.NewEncoder(w).Encode(findings)
+		if err != nil {
+			return
+		}
 	})
 
 	return r
