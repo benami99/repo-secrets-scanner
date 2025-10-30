@@ -1,4 +1,4 @@
-# Repo Scanner
+# Repo Secrets Scanner
 A lightweight Go web app that scans a GitHub repository for leaked AWS secrets by analyzing commit diffs across all branches. 
 Supports resuming from the last scanned commit.
 
