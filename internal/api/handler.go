@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/benami99/repo-scanner/internal/service"
+	"github.com/benami99/repo-secrets-scanner/internal/service"
 	"github.com/go-chi/chi/v5"
 )
 

@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/benami99/repo-scanner/internal/model"
+	"github.com/benami99/repo-secrets-scanner/internal/model"
 )
 
 type GithubClient struct {

@@ -6,8 +6,8 @@ import (
 	"sort"
 	"time"
 
-	"github.com/benami99/repo-scanner/internal/model"
-	"github.com/benami99/repo-scanner/internal/repository"
+	"github.com/benami99/repo-secrets-scanner/internal/model"
+	"github.com/benami99/repo-secrets-scanner/internal/repository"
 )
 
 type RepositoryClient interface {

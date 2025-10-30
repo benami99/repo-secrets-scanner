@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/benami99/repo-scanner/internal/model"
+	"github.com/benami99/repo-secrets-scanner/internal/model"
 )
 
 // Repository is a very small abstraction for storing findings.

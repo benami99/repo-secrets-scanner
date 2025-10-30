@@ -12,8 +12,8 @@ Supports resuming from the last scanned commit.
 ## Setup
 ```bash
 # Running from IDE
-git clone https://github.com/yourusername/repo-scanner.git
-cd repo-scanner
+git clone https://github.com/yourusername/repo-secrets-scanner.git
+cd repo-secrets-scanner
 export GITHUB_TOKEN=your_token_here
 export HTTP_ADDR=:8080
 go run ./cmd/main.go
@@ -21,12 +21,12 @@ go run ./cmd/main.go
 #
  Running via docker:
  
- docker build -t repo-scanner .
+ docker build -t repo-secrets-scanner .
  
  docker run -d -p 8080:8080 \                           
   -e GITHUB_TOKEN=[TOKEN] \
   -e HTTP_ADDR=:8080 \
-  repo-scanner
+  repo-secrets-scanner
 
  
 ```

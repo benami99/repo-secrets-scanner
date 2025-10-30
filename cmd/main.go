@@ -4,10 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/benami99/repo-scanner/internal/api"
-	"github.com/benami99/repo-scanner/internal/config"
-	"github.com/benami99/repo-scanner/internal/repository"
-	"github.com/benami99/repo-scanner/internal/service"
+	"github.com/benami99/repo-secrets-scanner/internal/api"
+	"github.com/benami99/repo-secrets-scanner/internal/config"
+	"github.com/benami99/repo-secrets-scanner/internal/repository"
+	"github.com/benami99/repo-secrets-scanner/internal/service"
 )
 
 func main() {
